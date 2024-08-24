@@ -1,4 +1,4 @@
-{% set version = "0.9.6" %}
+{% set version = "0.9.7" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/quanteda.textmodels_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/quanteda.textmodels/quanteda.textmodels_{{ version }}.tar.gz
-  sha256: a16b9258ca2fdd1c48d4a5ef71e5faa339b048f5bdc6fc745d8aa16fd1f71aea
+  sha256: afe365b8335f48017c0464aed4a7de27bcb5203797c2c9e6a7b52fbf60f21f72
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -42,10 +42,9 @@ requirements:
     - r-rspectra
     - r-rcpp >=0.12.12
     - r-rcpparmadillo >=0.7.600.1.0
-    - r-rcppparallel
     - r-sparsem
     - r-glmnet
-    - r-quanteda >=2.0
+    - r-quanteda >=4.0.0
     - r-stringi
   run:
     - r-base
@@ -54,10 +53,9 @@ requirements:
     - r-rspectra
     - r-rcpp >=0.12.12
     - r-rcpparmadillo >=0.7.600.1.0
-    - r-rcppparallel
     - r-sparsem
     - r-glmnet
-    - r-quanteda >=2.0
+    - r-quanteda >=4.0.0
     - r-stringi
 
 test:
@@ -67,7 +65,6 @@ test:
 
 about:
   home: https://github.com/quanteda/quanteda.textmodels
-
   license: GPL-3.0-only
   summary: Scaling models and classifiers for sparse matrix objects representing textual data in the form of a document-feature matrix.  Includes original implementations of 'Laver', 'Benoit', and Garry's (2003) <doi:10.1017/S0003055403000698>, 'Wordscores' model, Perry and 'Benoit's' (2017) <arXiv:1710.08963> class affinity
     scaling model, and 'Slapin' and 'Proksch's' (2008) <doi:10.1111/j.1540-5907.2008.00338.x> 'wordfish' model, as well as methods for correspondence analysis, latent semantic analysis, and fast Naive Bayes and linear 'SVMs' specially designed for sparse textual data.
